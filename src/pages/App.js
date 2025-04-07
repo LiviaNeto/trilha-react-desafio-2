@@ -29,14 +29,13 @@ function App() {
       }
 
     }
-    alert('Repositório não encontrado')
+    alert('Repositório não encontrado ou já cadastrado')
 
   }
 
   const handleRemoveRepo = (id) => {
-    console.log('Removendo registro', id);
-
-    // utilizar filter.
+    const repoSemItem = repos.filter(repo => repo.id !== id);
+    setRepos(prev => [...repoSemItem]);
   }
 
 
